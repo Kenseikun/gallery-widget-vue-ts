@@ -1,7 +1,7 @@
 /** @author Sebastian Dziechciarz */
 <template>
   <div class="image--edit">
-    <h2>Add your own image...</h2>
+    <h2 v-if="urlInput === ''">Add your own image...</h2>
     <img
       :src="urlInput"
       alt=""
@@ -25,6 +25,7 @@
       <input
         type="range"
         name="opacity"
+        value="1"
         min="0"
         step="0.1"
         max="1"
@@ -36,6 +37,7 @@
       <input
         type="range"
         name="grayscale"
+        value="0"
         min="0"
         step="1"
         max="100"
