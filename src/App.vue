@@ -1,14 +1,19 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <gallery-widget :widgetSize="widgetSize"></gallery-widget>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import GalleryWidget from "./gallery-widget/GalleryWidget.vue";
 
 @Component({
-  components: {},
+  components: { GalleryWidget },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public widgetSize: any = "small";
+}
 </script>
 
 <style lang="scss">
