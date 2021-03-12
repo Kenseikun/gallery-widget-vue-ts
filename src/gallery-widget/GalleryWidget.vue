@@ -77,7 +77,7 @@ export default class GalleryWidget extends Vue {
   ];
 
   // HERE I NEED PROP INFORMATION "large" or "small"
-  // prop = this.widgetSize;
+
   prop = this.widgetSize;
 
   // Local storage | Start
