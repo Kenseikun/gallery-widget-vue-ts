@@ -1,12 +1,14 @@
 /** @author Sebastian Dziechciarz */
 <template>
   <div class="image--edit">
-    <h2 v-if="urlInput === ''">Add your own image...</h2>
+    <h2 class="image--edit__title" v-if="urlInput === ''">
+      Add your own image...
+    </h2>
     <img
+      class="image--edit__img"
       :src="urlInput"
       alt=""
       :style="{
-        width: 100 + 'px',
         filter: `grayscale(${grayscale}%)`,
         opacity: `${opacity}`,
       }"
@@ -48,7 +50,6 @@
         class="form__btn"
         type="submit"
         :disabled="urlInput === '' ? true : false"
-        @click.prevent="setSelectedTab"
       >
         confirm
       </button>
@@ -68,6 +69,8 @@ export default class AddImage extends Vue {
   opacity = OPACITY_VALUE;
   grayscale = GRAY_SCALE_VALUE;
 
+  galleryVisible = "";
+
   public submitData() {
     const newImage = {
       url: this.urlInput,
@@ -76,16 +79,12 @@ export default class AddImage extends Vue {
 
     this.$emit("add-image", newImage);
 
+    this.galleryVisible = "gallery";
+    this.$emit("gallery-submit", this.galleryVisible);
+
     this.urlInput = "";
     this.opacity = OPACITY_VALUE;
     this.grayscale = GRAY_SCALE_VALUE;
-  }
-
-  galleryVisible = "";
-
-  public setSelectedTab() {
-    this.galleryVisible = "gallery";
-    this.$emit("gallery-submit", this.galleryVisible);
   }
 }
 </script>
@@ -100,6 +99,14 @@ export default class AddImage extends Vue {
   color: #fff;
   width: 100%;
   height: 100%;
+
+  &__title {
+    margin: 2px auto;
+  }
+
+  &__img {
+    width: 100px;
+  }
 
   .form {
     display: flex;

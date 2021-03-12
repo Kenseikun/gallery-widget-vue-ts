@@ -14,15 +14,19 @@ import GalleryWidget from "./gallery-widget/GalleryWidget.vue";
 })
 export default class App extends Vue {
   // Use prop small or large to change gallery
-  public widgetSize: any = "small";
+  public widgetSize: any = "large";
 }
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
 .app {
-  height: 100vh;
+  font-family: "Roboto", sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  height: 100vh;
 }
 </style>
