@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <gallery-widget :widgetSize="widgetSize"></gallery-widget>
   </div>
 </template>
@@ -19,4 +19,10 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

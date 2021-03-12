@@ -48,6 +48,7 @@
         class="form__btn"
         type="submit"
         :disabled="urlInput === '' ? true : false"
+        @click.prevent="setSelectedTab"
       >
         confirm
       </button>
@@ -78,6 +79,13 @@ export default class AddImage extends Vue {
     this.urlInput = "";
     this.opacity = OPACITY_VALUE;
     this.grayscale = GRAY_SCALE_VALUE;
+  }
+
+  galleryVisible = "";
+
+  public setSelectedTab() {
+    this.galleryVisible = "gallery";
+    this.$emit("gallery-submit", this.galleryVisible);
   }
 }
 </script>

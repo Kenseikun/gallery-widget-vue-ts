@@ -15,6 +15,7 @@
           v-if="isVisible === 'edit' && prop === 'small'"
           :storedImages="storedImages"
           @add-image="addImage"
+          @gallery-submit="handleIsVisible"
         ></add-image>
       </keep-alive>
 

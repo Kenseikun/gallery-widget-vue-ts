@@ -34,7 +34,7 @@ import AddImage from "../views/AddImage.vue";
 export default class ButtonsMenu extends Vue {
   galleryVisible = "gallery";
 
-  setSelectedTab(tab: string) {
+  public setSelectedTab(tab: string) {
     this.galleryVisible = tab;
     this.$emit("gallery-visible", this.galleryVisible);
   }
