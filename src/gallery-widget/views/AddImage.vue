@@ -1,7 +1,17 @@
 /** @author Sebastian Dziechciarz */
 <template>
   <div class="image--edit">
-    <h2 class="image--edit__title">Add your own image!</h2>
+    <h2>Add your own image...</h2>
+    <img
+      :src="urlInput"
+      alt=""
+      :style="{
+        width: 100 + 'px',
+        filter: `grayscale(${grayscale}%)`,
+        opacity: `${opacity}`,
+      }"
+    />
+
     <form class="form" @submit.prevent="submitData">
       <input
         class="form__input"

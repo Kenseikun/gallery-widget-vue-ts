@@ -62,10 +62,6 @@ export default class GalleryWidget extends Vue {
   @Prop()
   public widgetSize!: string;
 
-  constructor() {
-    super();
-    // this.widgetSize = "";
-  }
   // public storedImages: Image[] = this.getImagesFromLocalStorage();
   public storedImages: Image[] = [
     {
@@ -80,9 +76,9 @@ export default class GalleryWidget extends Vue {
     },
   ];
 
-  // TODO: HERE I NEED PROP INFORMATION "large" or "small"
+  // HERE I NEED PROP INFORMATION "large" or "small"
   // prop = this.widgetSize;
-  prop = "small";
+  prop = this.widgetSize;
 
   // Local storage | Start
   setImageToLocalStorage() {
@@ -141,22 +137,6 @@ export default class GalleryWidget extends Vue {
       }
     }, 3000);
   }
-
-  // counterIndex = 0;
-
-  // mounted() {
-  //   setInterval(() => {
-  //     this.counterIndex++;
-  //   }, 1000);
-  // }
-
-  // get itemIndex() {
-  //   return this.counterIndex % this.storedImages.length;
-  // }
-
-  // get itemByIndex() {
-  //   return this.storedImages[this.itemIndex];
-  // }
 }
 </script>
 

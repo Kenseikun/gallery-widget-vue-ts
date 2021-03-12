@@ -2,7 +2,7 @@
 <template>
   <div class="gallery__content">
     <img
-      :src="newUrlProp"
+      :src="imageUrl"
       alt=""
       class="gallery__image"
       :style="{
